@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+<!-- The HTML structure is inherited from layout.html -->
+<!-- The following block contains all the content unique to this file -->
+{% block content %}
+<article id="about-page">
+	<h1>About</h1>
+	<p>This website was created as a way for me to practice using the <a href="http://flask.pocoo.org/" target="_blank">Flask</a> microframework.</p>
+	<p>The user enters a query, just like it would in https://www.worten.pt/, and then, through a Python script, information about the first result is scraped, an HTML template created and then shown here in the website.</p>
+	<p>For more information about the original Python project to scrape products from Worten, visit my GitHub repository <a href="https://github.com/Ze1598/Scrape-Worten" target="_blank">here</a>.</p>
+	<p>I've also created a GitHub repository for this website <a href="https://github.com/Ze1598/Scrape-Worten-Flask" target="_blank">here</a>.</p>
+</article>
+{% endblock content %}

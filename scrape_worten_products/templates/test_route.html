@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+<!-- The HTML structure is inherited from layout.html -->
+<!-- The following block contains all the content unique to this file -->
+{% block content %}
+<article class="prod">
+	<section class="prod-info">
+		<h1 class="prod-name">Some product name</h1>
+        <!-- if prod_avail[i] == In stock: -->
+		<h3 style="background-color: #01a701" class="avail">Availability: -----</h3>
+        <!-- else: -->
+            <!-- temp_string += f\n\t\t\t<h3 style="background-color: #a70101" class="not-avail">Availability: {prod_avail[i]}</h3> -->
+        <p class="prod-id">Some product ID<p>
+        <img src="" alt="Some image"/>
+        <p class="prod-desc">Some product description</p>
+	</section>
+    <section class="extra-info">
+        <table class="extra">
+        	<tr>
+        		<td>Price</td>
+        		<td>€XX.XX</td>
+        	</tr>
+      		<tr>
+      			<td>Category</td>
+      			<td>Some category</td>
+      		</tr>
+      		<tr>
+      			<td>Brand</td>
+      			<td>Some brand</td>
+      		</tr>
+      		<tr>
+      			<td>Weight</td>
+      			<td>Some weight</td>
+      		</tr>
+      		<tr>
+      			<td>Dimensions</td>
+      			<td>Some dimensions</td>
+      		</tr>
+      		<tr>
+      			<td>Color</td>
+      			<td>Some color</td>
+      		</tr>
+      		<tr>
+      			<td>Stock</td>
+      			<td>Some stock</td>
+      		</tr>
+  		</table>
+    </section>
+</article>
+{% endblock content %}

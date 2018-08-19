@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+TODO:
+    add content to footer
+-->
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="latin-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+<!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <!-- My CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    {% if title %}
+        <title>Scrape Worten Products | {{ title }}</title>
+    {% else %}
+        <title>Scrape Worten Products</title>
+    {% endif %}
+</head>
+
+<body>
+    <header>
+        
+        <div id="logo" href="{{ url_for('main.home') }}"></div>
+        
+        <div id="buttons" style="margin: 2rem 0rem;">
+            <a href="{{ url_for('main.home') }}" id="to-about">Home</a>
+            <a href="{{ url_for('main.about') }}" id="to-about">About this website</a>
+        </div>
+
+
+        <!-- Only show the table with a text box to search for a product if the 
+            user is not in the About page -->
+        {% if title != "About" %}
+            <table id="search">
+                <form method="POST">
+                    <tr>
+                        <td colspan="2" style="text-align: center;">Search for a product:</td>
+                    </tr>
+                    <tr>
+                        <!-- <td><input type="text" name="query" /></td> -->
+                        <td>{{ form.query() }}</td>
+                        <!-- <td><button>Search</button> -->
+                        <td>{{ form.submit() }}</td>
+                    </tr>
+                </form>
+            </table>
+        {% endif %}
+
+        <!-- Temporary -->
+        <!-- <button><a href="{{ url_for('main.test_route') }}">Press me</a></button> -->
+    
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ -->
+</body>
+</html>

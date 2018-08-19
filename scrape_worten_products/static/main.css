@@ -1,0 +1,189 @@
+/* Layout */
+/*------------------------------------------------------------------------*/
+/* Use a gradient as the background for the whole page */
+body {
+	/*background: linear-gradient(135deg, #c7503b, #a80404);*/
+	background: linear-gradient(135deg, #ff6060, #ff0000);
+	font-family: Lato,sans-serif;
+	min-height: 100%;
+}
+
+/* Style the header of the pages */
+header {
+	margin-bottom: 3em;
+	margin-left: 15px;
+}
+
+/* Add Worten's logo to the header */
+#logo {
+	/* Display the logo in is own line */
+	display: block;
+	/* Define the width and height for the image to occupy */
+    width: 230px;
+	height: 46px;
+	/* Needed to make the image appear */
+	content: "";
+	background: url("logo.png") no-repeat;	
+	/* Make it so x% of the image is resized to the size of the box */
+	background-size: 100%;
+	background-color: white;
+	border: 1px solid #1c1c1c;
+	/* Round the image's corners */
+	border-radius: 5px 5px 5px 5px;
+	/* Create a shadow for the box, which shows in the 
+		bottom right corner */
+	box-shadow: 2px 2px black;
+}
+
+
+/* Style the table that holds the search form */
+#search {
+	margin-right: auto;
+	margin-left: auto;
+	padding: 10px;
+	border: 1px solid #1c1c1c;
+	/* Round the image's corners */
+	border-radius: 5px 5px 5px 5px;
+	/* Create a shadow for the box, which shows in the 
+		bottom right corner */
+	box-shadow: 2px 2px black;
+	background-color: #c2c2c2;
+	margin-bottom: 3rem;
+}
+
+/* Style the buttons that link to the About and Home pages */
+#to-about, #to-home {
+	color: black;
+	text-decoration: none;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px;
+	background: linear-gradient(#c6c6c6, white);
+}
+/*------------------------------------------------------------------------*/
+
+
+
+/* Query Results */
+/*------------------------------------------------------------------------*/
+
+/* Change the background and border for the section that
+	contains the product */
+.prod {
+	background: linear-gradient(135deg, #f7793b, #ef4f00);
+	padding: 5px 5px 10px 10px;
+	margin: 15px;
+	border: 2px solid black;
+	border-radius: 5px 5px 5px 5px;
+	width: 70%;
+}
+/* Adjust the padding for the elements before the extra info table */
+.prod-info {
+	padding-left: 10px;
+}
+
+/* Format the availability part (there's 3 types of
+	availability so we need 3 selectors) */
+.avail {
+	width: 21%;
+	padding: 3px;
+	border: 1px dotted #015a01;
+	background-color: #01a701;
+}
+.not-avail {
+	width: 25%;
+	padding: 3px;
+	border: 1px dotted #015a01;
+	background-color: #a70101;
+}
+.pre-avail {
+	width: 22%;
+	padding: 3px;
+	border: 1px dotted #015a01;
+	background-color: #d6b00a;
+}
+
+/* Add text before the product id */
+.prod-id:before {
+	content: "Product ID: ";
+	font-weight: bold;
+}
+/* Make the product id text bigger */
+.prod-id {
+	font-size: 120%;
+}
+
+/* Create a border for the product image */
+article img {
+	border: 3px solid grey;
+}
+
+/* Add text before the product description */
+.prod-desc:before {
+	content: "Product description: ";
+	display: block;
+	margin: 10px 0px;
+	font-size: 110%;
+	font-weight: bold;
+}
+/* Style the product description text */
+.prod-desc {
+	text-align: justify;
+	width: 90%;
+	line-height: 1.25;
+}
+
+
+/* Table with extra information */
+/* Add information before the product's extra information */
+.extra-info:before {
+	content: "More information: ";
+	display: block;
+	font-size: 110%;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+/* Give some padding to the section that contains the table */
+.extra-info {
+	padding-left: 10px;
+}
+/* Format the table about a product's extra information */
+.extra {
+	/* Remove spacing between cells in the table */
+	border-collapse: collapse;
+	border: 2px solid grey;
+	margin-bottom: 10px;
+}
+/* Give a white background to (odd) rows */
+.extra tr {
+	background-color: white;
+	border-bottom: 1px solid grey;
+	padding: 5px 5px 5px 10px;
+}
+/* Give a grey background color to even rows */
+.extra tr:nth-child(2n+2) {
+	background-color: #c5c5c5;
+}
+/* When hovering over a row, make its border thicker */
+.extra tr:hover {
+	border: 2px solid black;
+	padding: 5px;
+}
+/* Table cells have 5px of padding in all directions */
+.extra th, .extra td {
+	padding: 5px;
+}
+/*------------------------------------------------------------------------*/
+
+/* About */
+/*------------------------------------------------------------------------*/
+#about-page {
+	background: linear-gradient(135deg, #f7793b, #ef4f00);
+	padding: 5px 5px 10px 10px;
+	margin: 15px;
+	border: 2px solid black;
+	border-radius: 5px 5px 5px 5px;
+	width: 70%;
+	line-height: 1.5;
+}
+/*------------------------------------------------------------------------*/
