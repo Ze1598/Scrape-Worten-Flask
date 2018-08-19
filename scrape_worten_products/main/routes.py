@@ -62,12 +62,3 @@ def query_result():
 		return redirect(url_for("main.query_result"))
 
 	return render_template("query_result.html", title="Query Result", form=form)
-
-
-# Just a test route
-'''
-@main.route("/test_route")
-def test_route():
-	form = SearchForm()
-	return render_template("test_route.html", title="Test Route", form=form)
-'''
