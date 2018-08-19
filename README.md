@@ -6,6 +6,7 @@ The user enters a query, just like it would in https://www.worten.pt/, and then,
 
 For more information about the original Python project to scrape products from Worten, visit my GitHub repository https://github.com/Ze1598/Scrape-Worten. What is used here is an adaptation of what I call "catalog" in that repo.
 
+Note: currently it is not hosted online.
 
 External references:
 
