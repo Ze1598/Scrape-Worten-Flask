@@ -67,7 +67,6 @@ def scrape(args):
     else:
         scraped_info['prod_avail'] = 'Pre-Order'
 
-    
     # Product name
     prod_name = more_info.header.h2.find('span', class_='w-section__product').text.strip()
     scraped_info['prod_name'] = prod_name
@@ -76,23 +75,20 @@ def scrape(args):
     # that contain the text we want, the categories)
     prod_cat = soup.find('ul', class_='w-breadcrumbs breadcrumbs').find_all('li')[-1].a.text.strip()
     scraped_info['prod_cat'] = prod_cat
+    print(scraped_info)
 
     # Product current price (if it's on sale, scrapes the discounted price)
-    prod_price = soup.find('span', class_='w-product__price__current')['content']
+    try:
+        prod_price = soup.find('span', class_='w-product__price__current')['content']
+    # If it raises an exception, then it's probably a product sold by third\
+    # parties; need to find a different HTML element
+    except:
+        prod_price = soup.find('span', class_='w-product-price__main').text.strip()
     scraped_info['prod_price'] = prod_price
 
     # Product pictures' links
-    # The try clause is for cases where the product has 5 pictures or less
-    try:
-        pics = soup.find('div', class_='swiper-container w-product-gallery__thumbnails swiper__off').find_all('div', class_='swiper-slide')
-        pictures = [target+pic.a.img["src"] for pic in pics]
-    # The except clause is run when a product has 6 or more pictures
-    # We need to use a different line of code for products with more\
-    # than 5 pictures because the source HTML is different for these cases
-    except:
-        pics = soup.find('div', class_='swiper-wrapper').find_all('div')
-        pictures = [target+pic.a.img["src"] for pic in pics]
-
+    pics = soup.find('div', class_='swiper-wrapper').find_all('div')
+    pictures = ['https://www.worten.pt'+pic.img["src"] for pic in pics]
     scraped_info['prod_pic'] = pictures[0]
 
     # Product description
@@ -180,8 +176,6 @@ def scrape(args):
 
 
     return scraped_info
-
-
 
 
 def gen_html(scraped_data):

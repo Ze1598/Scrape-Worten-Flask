@@ -8,14 +8,12 @@ For more information about the original Python project to scrape products from W
 
 Note: currently it is not hosted online.
 
-External references:
+### External references:
 
-External references:
+* Target website: https://www.worten.pt/
 
--Target website: https://www.worten.pt/
+* Beautiful Soup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 
--Beautiful Soup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+* Requests: http://docs.python-requests.org/en/master/
 
--Requests: http://docs.python-requests.org/en/master/
-
--Repl.it: http://flask.pocoo.org/docs/1.0/
+* Flask: http://flask.pocoo.org/docs/1.0/
